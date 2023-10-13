@@ -1,6 +1,9 @@
+Here's the updated README for your HDAnime.org Cover Fetching API with the changes made to the PHP example:
+
+```markdown
 # HDAnime.org Cover Fetching API
 
-This API allows you to fetch anime covers from HDAnime.org. You can use this API to retrieve cover images for specific anime titles and integrate them into your applications or websites. Note that it is season sensitive, ignores most typos and is not Case Sensitive. Here's how to use it:
+This API allows you to fetch anime covers from HDAnime.org. You can use this API to retrieve cover images for specific anime titles and integrate them into your applications or websites. Note that it is season-sensitive, ignores most typos, and is not case-sensitive. Here's how to use it:
 
 ## Usage
 
@@ -12,7 +15,7 @@ https://hdanime.org/api/fetch_cover.php?anime_name=Your_Anime_Title
 
 Replace `Your_Anime_Title` with the title of the anime for which you want to retrieve the cover image.
 
-The response will contain an HTML image tag with the cover image. If no cover is found, a placeholder image or a default image URL is provided.
+The response will contain the raw image data served as a blob. If no cover is found, a placeholder image or a default image URL is provided.
 
 ### Example in PHP
 
@@ -27,10 +30,12 @@ $apiUrl = "https://hdanime.org/api/fetch_cover.php?anime_name=" . urlencode($ani
 $response = file_get_contents($apiUrl);
 
 if ($response) {
+    // Output the image content as a blob
+    header('Content-Type: image/jpeg'); // You may need to adjust the content type based on the actual image format
     echo $response;
 } else {
     // Handle the case where no cover is found
-    echo '<img src="path_to_placeholder_image" alt="Default Cover">';
+    echo 'path_to_placeholder_image';
 }
 ?>
 ```
@@ -64,4 +69,7 @@ You can use JavaScript to call the API and display the cover image on a web page
     </script>
 </body>
 </html>
+```
+
+With these updates, the PHP example serves the raw image as a blob, and the JavaScript example remains unchanged.
 ```
