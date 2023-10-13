@@ -1,6 +1,6 @@
 # HDAnime.org Cover Fetching API
 
-This API allows you to fetch anime covers from HDAnime.org. You can use this API to retrieve cover images for specific anime titles and integrate them into your applications or websites. Here's how to use it:
+This API allows you to fetch anime covers from HDAnime.org. You can use this API to retrieve cover images for specific anime titles and integrate them into your applications or websites. Note that it is season sensitive, ignores most typos and is not Case Sensitive. Here's how to use it:
 
 ## Usage
 
