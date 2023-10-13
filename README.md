@@ -1,4 +1,4 @@
-Here's the updated README for your HDAnime.org Cover Fetching API with the changes made to the PHP example:
+
 
 ```markdown
 # HDAnime.org Cover Fetching API
